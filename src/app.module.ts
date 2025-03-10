@@ -8,12 +8,13 @@ import { SaleModule } from './sale/sale.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, "..", "public"),
+      rootPath: join(__dirname, '..', 'public'),
     }),
     MongooseModule.forRoot('mongodb://localhost:27017/shoe-store'),
-  ShoeModule,
-  SaleModule],
+    ShoeModule,
+    SaleModule,
+  ],
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}
