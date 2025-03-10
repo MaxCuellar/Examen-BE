@@ -4,13 +4,13 @@ export class CreateShoeDto {
     
         @IsString()
         @MinLength(1)
-        @Transform(({ value }) => value.toLowerCase()) // Convierte a minúsculas automáticamente
+        @Transform(({ value }) => value.toLowerCase()) 
         @IsLowercase()
         name: string;
     
         @IsString()
-        @MinLength(4)   
-        @Transform(({ value }) => value.toLowerCase()) // Convierte a minúsculas automáticamente
+        @MinLength(1)   
+        @Transform(({ value }) => value.toLowerCase()) 
         @IsLowercase()
         brand: string;
 
@@ -21,26 +21,20 @@ export class CreateShoeDto {
         @IsNumber()
         @IsPositive()
         price: number;
-        
-        @IsOptional()
-        @IsNumber()
-        @Transform(({ value }) => value ?? 0)  // Asigna 0 si no se proporciona
-        @IsPositive()
-        stock: number;
     
-        @IsString()
-        @Transform(({ value }) => value.toLowerCase()) // Convierte a minúsculas automáticamente
+        @IsString()     
+        @Transform(({ value }) => value.toLowerCase()) 
         @IsLowercase()
         gender: string;
     
         @IsString()
-        @Transform(({ value }) => value.toLowerCase()) // Convierte a minúsculas automáticamente
+        @Transform(({ value }) => value.toLowerCase()) 
         @IsLowercase()
         category: string;
 
         @IsOptional()
         @IsBoolean()    
-        @Transform(({ value }) => value ?? true)  // Asigna 0 si no se proporciona
-        active: boolean;
+        @Transform(({ value }) => value ?? true)  
+        active?: boolean;
 
 }

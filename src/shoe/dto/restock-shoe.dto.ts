@@ -1,12 +1,11 @@
-import { IsMongoId, IsNumber, IsPort, IsPositive } from "class-validator";
+import { IsMongoId, IsNumber} from "class-validator";
 
 export class RestockShoeDto {
 
     @IsMongoId()
-    readonly id: string;   // ID del zapato
+    readonly id: string;   
 
     @IsNumber()
-    @IsPositive()
-    readonly newStock: number; // Cantidad a agregar al stock
+    readonly newStock: number; 
   }
   

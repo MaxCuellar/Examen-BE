@@ -34,7 +34,7 @@ export class ShoeController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.shoeService.remove(+id);
+  delete(@Param('id') id: string) {
+    return this.shoeService.delete(id);
   }
 }
